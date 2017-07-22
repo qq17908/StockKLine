@@ -85,7 +85,7 @@ bool DataFile::readData(QString filestr)
 void DataFile::calAverageLine()
 {
 
-    // åˆå§‹åŒ–å„å‡çº¿çš„å€¼
+    // ³õÊ¼»¯¸÷¾ùÏßµÄÖµ
     for(int i=0;i<4;i++)
         kline[i].averageLine5 = 0;
 

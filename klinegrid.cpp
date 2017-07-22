@@ -13,7 +13,7 @@
 
 KLineGrid::KLineGrid(QWidget *parent) : AutoGrid(parent)
 {
-    //å¼€å¯é¼ æ ‡è¿½è¸ª
+    //¿ªÆôÊó±ê×·×Ù
     setMouseTracking(true);
 
     initial();
@@ -36,16 +36,16 @@ KLineGrid::~KLineGrid()
 void KLineGrid::initial()
 {
 
-    //è¯»å–æ•°æ®
+    //¶ÁÈ¡Êı¾İ
     QString file = tr("dataKLine.txt");
     if( !mDataFile.readData(file) )
     {
-        QMessageBox::about(this,tr("æ•°æ®æ–‡ä»¶è¯»å–å¤±è´¥"),tr("ç¡®å®š"));
+        QMessageBox::about(this,tr("Êı¾İÎÄ¼ş¶ÁÈ¡Ê§°Ü"),tr("È·¶¨"));
         return ;
     }
-    //å¼€å¯é¼ æ ‡è¿½è¸ª
+    //¿ªÆôÊó±ê×·×Ù
     setMouseTracking(true);
-    //åˆå§‹åŒ–ä¸€äº›æˆå‘˜å˜é‡
+    //³õÊ¼»¯Ò»Ğ©³ÉÔ±±äÁ¿
 
     endDay = mDataFile.kline.size() - 1;
     totalDay = 200;
@@ -61,7 +61,7 @@ void KLineGrid::initial()
     maxVolume = 0;
 
 
-    //æ„é€ è¯¦æƒ…å±•ç¤ºé¡µé¢
+    //¹¹ÔìÏêÇéÕ¹Ê¾Ò³Ãæ
 
     /*
         mShowDrtail = new ShowDetail(this);
@@ -77,7 +77,7 @@ void KLineGrid::initial()
     */
 
 
-    //æ„é€ è¯¦ç»†æ•°æ®å±•ç¤ºé¡µé¢
+    //¹¹ÔìÏêÏ¸Êı¾İÕ¹Ê¾Ò³Ãæ
     mShowDrtail = new ShowDetail(this);
     mShowDrtail->setModal(false);
     mShowDrtail->setFixedSize(140,700);
@@ -95,24 +95,24 @@ void KLineGrid::paintEvent(QPaintEvent *event)
 {
     AutoGrid::paintEvent(event);
 
-    //ç”»kçº¿
+    //»­kÏß
     drawLine();
 }
 
 
 void KLineGrid::drawLine()
 {
-    //è·å–yè½´æŒ‡æ ‡
+    //»ñÈ¡yÖáÖ¸±ê
     getIndicator();
 
-    //æ˜¾ç¤ºyè½´ä»·æ ¼
+    //ÏÔÊ¾yÖá¼Û¸ñ
     drawYtick();
 
-    //ç”»kçº¿
+    //»­kÏß
     drawKline();
 
 
-    //ç”»åå­—çº¿
+    //»­Ê®×ÖÏß
     if( !isKeyDown && bCross)
     {
         drawCross2();
@@ -124,15 +124,15 @@ void KLineGrid::drawLine()
     }
 
 
-    //ç”»5æ—¥å‡çº¿
+    //»­5ÈÕ¾ùÏß
     drawAverageLine(5);
-    //ç”»5æ—¥å‡çº¿
+    //»­5ÈÕ¾ùÏß
     drawAverageLine(10);
-    //ç”»5æ—¥å‡çº¿
+    //»­5ÈÕ¾ùÏß
     drawAverageLine(20);
-    //ç”»5æ—¥å‡çº¿
+    //»­5ÈÕ¾ùÏß
     drawAverageLine(30);
-    //ç”»5æ—¥å‡çº¿
+    //»­5ÈÕ¾ùÏß
     drawAverageLine(60);
 
 }
@@ -200,13 +200,13 @@ void KLineGrid::drawKline()
     if (beginDay <0)
         return;
 
-    //yè½´ç¼©æ”¾
+    //yÖáËõ·Å
     yscale = getGridHeight() / (highestBid -lowestBid ) ;
 
-    //ç”»ç¬”çš„çº¿å®½
+    //»­±ÊµÄÏß¿í
     lineWidth;
 
-    //ç”»çº¿è¿æ¥çš„ä¸¤ä¸ªç‚¹
+    //»­ÏßÁ¬½ÓµÄÁ½¸öµã
     QPoint p1;
     QPoint p2;
 
@@ -225,20 +225,20 @@ void KLineGrid::drawKline()
 
         lineWidth = getGridWidth() / totalDay;
 
-        //ä¸ºäº†å„ä¸ªkçº¿ä¹‹é—´ä¸è´´åœ¨ä¸€èµ·ï¼Œè®¾ç½®ä¸€ä¸ªé—´éš”
+        //ÎªÁË¸÷¸ökÏßÖ®¼ä²»ÌùÔÚÒ»Æğ£¬ÉèÖÃÒ»¸ö¼ä¸ô
         lineWidth = lineWidth - 0.2*lineWidth;
 
-        //æœ€å°çº¿å®½ä¸º3
+        //×îĞ¡Ïß¿íÎª3
         if( lineWidth < 3)
             lineWidth = 3;
 
 
 
-        //é˜´çº¿
+        //ÒõÏß
 
         if( mDataFile.kline[i].openingPrice > mDataFile.kline[i].closeingPrice )
         {
-            //ç”»å¼€ç›˜ä¸æ”¶ç›˜ä¹‹é—´çš„ç²—å®çº¿
+            //»­¿ªÅÌÓëÊÕÅÌÖ®¼äµÄ´ÖÊµÏß
             pen.setWidth(lineWidth);
             painter.setPen(pen);
             p1.setX( getMarginLeft() + xstep *(i - beginDay) + 0.5*lineWidth);
@@ -248,7 +248,7 @@ void KLineGrid::drawKline()
             painter.drawLine(p1,p2);
 
 
-            //ç”»æœ€é«˜ä»·ä¸æœ€ä½ä»·ä¹‹é—´çš„ç»†çº¿
+            //»­×î¸ß¼ÛÓë×îµÍ¼ÛÖ®¼äµÄÏ¸Ïß
             pen.setWidth(1);
             painter.setPen(pen);
             p1.setX( getMarginLeft() + xstep *(i - beginDay) + 0.5*lineWidth);
@@ -261,7 +261,7 @@ void KLineGrid::drawKline()
         }
         else
         {
-            //åƒåŒèŠ±é¡ºä¸€æ ·é˜³çº¿ç”»æˆç©ºå¿ƒçš„
+            //ÏñÍ¬»¨Ë³Ò»ÑùÑôÏß»­³É¿ÕĞÄµÄ
 
             pen.setWidth(1);
             painter.setPen(pen);
@@ -286,7 +286,7 @@ void KLineGrid::drawKline()
             painter.drawLine(p3,p4);
 
 
-            //ç”»æœ€é«˜ä»·ä¸æœ€ä½ä»·ä¹‹é—´çš„ç»†çº¿
+            //»­×î¸ß¼ÛÓë×îµÍ¼ÛÖ®¼äµÄÏ¸Ïß
             pen.setWidth(1);
             painter.setPen(pen);
             p1.setX( getMarginLeft() + xstep *(i - beginDay) + 0.5*lineWidth);
@@ -368,7 +368,7 @@ void KLineGrid::keyPressEvent(QKeyEvent *event)
     {
         totalDay = totalDay /2;
 
-        //æœ€å°‘æ˜¾ç¤º10ä¸ª
+        //×îÉÙÏÔÊ¾10¸ö
         if( totalDay < 10)
         {
             totalDay *= 2;
@@ -684,17 +684,17 @@ void KLineGrid::drawTips2()
 void KLineGrid::drawAverageLine(int day)
 {
 
-    //yè½´ç¼©æ”¾
+    //yÖáËõ·Å
     yscale = getGridHeight() / (highestBid -lowestBid ) ;
-    //ç”»ç¬”çš„çº¿å®½
+    //»­±ÊµÄÏß¿í
     lineWidth;
-    //ç”»çº¿è¦è¿æ¥çš„ç‚¹
+    //»­ÏßÒªÁ¬½ÓµÄµã
     QVector<QPoint> point;
 
-    //ä¸´æ—¶ç‚¹
+    //ÁÙÊ±µã
     QPoint temp;
 
-    //xè½´æ­¥è¿›
+    //xÖá²½½ø
     double xstep = getGridWidth() / totalDay;
 
 

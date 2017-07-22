@@ -9,26 +9,26 @@
 
 typedef struct
 {
-    QString time;                   //æ—¶é—´
-    double openingPrice;            //å¼€ç›˜
-    double highestBid;              //æœ€é«˜
-    double lowestBid;               //æœ€ä½
-    double closeingPrice;           //æ”¶ç›˜
-    double amountOfIncrease;        //æ¶¨å¹…
-    double amountOfAmplitude;       //æŒ¯å¹…
-    QString totalVolume;             //æ€»æ‰‹
-    QString totalAmount;             //é‡‘é¢
-    double turnoverRate;            //æ¢æ‰‹ç‡
-    double volumeAmount;            //æˆäº¤æ¬¡æ•°
-    double averageLine5;            //5æ—¥å‡çº¿
-    double averageLine10;           //10æ—¥å‡çº¿
-    double averageLine20;           //20æ—¥å‡çº¿
-    double averageLine30;           //30æ—¥å‡çº¿
-    double averageLine60;           //60æ—¥å‡çº¿
+    QString time;                   //Ê±¼ä
+    double openingPrice;            //¿ªÅÌ
+    double highestBid;              //×î¸ß
+    double lowestBid;               //×îµÍ
+    double closeingPrice;           //ÊÕÅÌ
+    double amountOfIncrease;        //ÕÇ·ù
+    double amountOfAmplitude;       //Õñ·ù
+    QString totalVolume;             //×ÜÊÖ
+    QString totalAmount;             //½ğ¶î
+    double turnoverRate;            //»»ÊÖÂÊ
+    double volumeAmount;            //³É½»´ÎÊı
+    double averageLine5;            //5ÈÕ¾ùÏß
+    double averageLine10;           //10ÈÕ¾ùÏß
+    double averageLine20;           //20ÈÕ¾ùÏß
+    double averageLine30;           //30ÈÕ¾ùÏß
+    double averageLine60;           //60ÈÕ¾ùÏß
     double ftotalVolume;
     double ftotalAmount;
-    double volumeAverage5;          //æˆäº¤é‡5æ—¥å‡å€¼
-    double volumeAverage10;         //æˆäº¤é‡10æ—¥å‡å€¼
+    double volumeAverage5;          //³É½»Á¿5ÈÕ¾ùÖµ
+    double volumeAverage10;         //³É½»Á¿10ÈÕ¾ùÖµ
 }KLine;
 
 

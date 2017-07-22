@@ -17,7 +17,7 @@ void kVolumeGrid::paintEvent(QPaintEvent *event)
 {
 
     AutoGrid::paintEvent(event);
-    //ç”»yè½´åæ ‡è½´
+    //»­yÖá×ø±êÖá
     drawYtick();
     drawVolume();
     drawAverageLine(5);
@@ -27,15 +27,15 @@ void kVolumeGrid::paintEvent(QPaintEvent *event)
 
 void kVolumeGrid::initial()
 {
-    //è¯»å–æ•°æ®
+    //¶ÁÈ¡Êı¾İ
     QString file = tr("dataKLine.txt");
     if( !mDataFile.readData(file) )
     {
-        QMessageBox::about(this,tr("æ•°æ®æ–‡ä»¶è¯»å–å¤±è´¥"),tr("ç¡®å®š"));
+        QMessageBox::about(this,tr("Êı¾İÎÄ¼ş¶ÁÈ¡Ê§°Ü"),tr("È·¶¨"));
         return ;
     }
 
-    //åˆå§‹åŒ–ä¸€äº›æˆå‘˜å˜é‡å€¼
+    //³õÊ¼»¯Ò»Ğ©³ÉÔ±±äÁ¿Öµ
 
     endDay = mDataFile.kline.size() - 1;
     totalDay = 200;
@@ -54,7 +54,7 @@ bool kVolumeGrid::readData(QString strFile)
 }
 
 
-//è·å¾—ç”»å›¾æ‰€éœ€çš„å„é¡¹æŒ‡æ ‡
+//»ñµÃ»­Í¼ËùĞèµÄ¸÷ÏîÖ¸±ê
 void kVolumeGrid::getIndicator()
 {
     maxVolume = 0;
@@ -108,15 +108,15 @@ void kVolumeGrid::drawVolume()
 
         lineWidth = getGridWidth() / totalDay;
 
-        //ä¸ºäº†å„ä¸ªkçº¿ä¹‹é—´ä¸è´´åœ¨ä¸€èµ·ï¼Œè®¾ç½®ä¸€ä¸ªé—´éš”
+        //ÎªÁË¸÷¸ökÏßÖ®¼ä²»ÌùÔÚÒ»Æğ£¬ÉèÖÃÒ»¸ö¼ä¸ô
         lineWidth = lineWidth - 0.2*lineWidth;
 
-        //æœ€å°çº¿å®½ä¸º3
+        //×îĞ¡Ïß¿íÎª3
         if( lineWidth < 3)
             lineWidth = 3;
 
 
-        //ç”»çº¿è¿æ¥çš„ä¸¤ä¸ªç‚¹
+        //»­ÏßÁ¬½ÓµÄÁ½¸öµã
         QPoint p1;
         QPoint p2;
 
@@ -132,7 +132,7 @@ void kVolumeGrid::drawVolume()
         int temp = strtemp.toInt()/100;
 
 
-        //é˜´çº¿
+        //ÒõÏß
 
         if( mDataFile.kline[i].openingPrice > mDataFile.kline[i].closeingPrice )
         {
@@ -147,7 +147,7 @@ void kVolumeGrid::drawVolume()
         }
 
 
-        //é˜³çº¿
+        //ÑôÏß
         else
         {
             pen.setWidth(1);
@@ -175,13 +175,13 @@ void kVolumeGrid::drawAverageLine(int day){
 
 
 
-    //ç”»çº¿è¦è¿æ¥çš„ç‚¹
+    //»­ÏßÒªÁ¬½ÓµÄµã
     QVector<QPoint> point;
 
-    //ä¸´æ—¶ç‚¹
+    //ÁÙÊ±µã
     QPoint temp;
 
-    //xè½´æ­¥è¿›
+    //xÖá²½½ø
     double xstep = getGridWidth() / totalDay;
     double yscale = getGridHeight() / maxVolume;
 

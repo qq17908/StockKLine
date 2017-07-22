@@ -1,4 +1,4 @@
-﻿#include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "klinegrid.h"
 #include "kvolumegrid.h"
@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    QSplitter *splitterMain = new QSplitter(Qt::Vertical, 0); //新建主分割窗口，水平分割
+    QSplitter *splitterMain = new QSplitter(Qt::Vertical, 0); //�½����ָ�ڣ�ˮƽ�ָ�
     QSplitter *splitterLeft = new QSplitter(Qt::Vertical, splitterMain);
     QSplitter *splitterRight = new QSplitter(Qt::Vertical, splitterMain);
 

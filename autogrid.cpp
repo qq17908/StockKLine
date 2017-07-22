@@ -1,4 +1,4 @@
-﻿#include "autogrid.h"
+#include "autogrid.h"
 #include <QPainter>
 #include <QPen>
 

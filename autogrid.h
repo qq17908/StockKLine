@@ -1,4 +1,4 @@
-ï»¿#ifndef AUTOGRID_H
+#ifndef AUTOGRID_H
 #define AUTOGRID_H
 
 #include <QWidget>
@@ -60,32 +60,32 @@ public:
 private:
 
 
-    //è¡¨æ ¼è·è¾¹æ¡†è·ç¦»
+    //±í¸ñ¾à±ß¿ò¾àÀë
     int marginLeft      = 80;
     int marginRight     = 80;
     int marginTop       = 20;
     int marginBottom    = 20;
 
 
-    //å½“å‰widgetçš„å®½åº¦å’Œé«˜åº¦
+    //µ±Ç°widgetµÄ¿í¶ÈºÍ¸ß¶È
     int widgetHeight;
     int widgetWidth;
 
-    //å½“å‰è¡¨æ ¼çš„å®½åº¦å’Œé«˜åº¦
+    //µ±Ç°±í¸ñµÄ¿í¶ÈºÍ¸ß¶È
     double gridHeight;
     double gridWidth;
 
-    //å½“å‰è¡¨æ ¼ä¸­æœ€å°è¡¨æ ¼çš„å®½åº¦å’Œé«˜åº¦
+    //µ±Ç°±í¸ñÖĞ×îĞ¡±í¸ñµÄ¿í¶ÈºÍ¸ß¶È
     double atomGridHeight;
     double atomGridWidth;
 
 
-    //è¡¨æ ¼ä¸­å°æ ¼å­çš„æ•°é‡
+    //±í¸ñÖĞĞ¡¸ñ×ÓµÄÊıÁ¿
     int hGridNum;
     int wGridNum;
 
 
-    //å½“å‰è¡¨æ ¼ä¸­æœ€å°è¡¨æ ¼çš„å®½åº¦å’Œé«˜åº¦çš„æœ€å°å€¼
+    //µ±Ç°±í¸ñÖĞ×îĞ¡±í¸ñµÄ¿í¶ÈºÍ¸ß¶ÈµÄ×îĞ¡Öµ
     double atomGridHeightMin;
     double atomGridWidthMin;
 
