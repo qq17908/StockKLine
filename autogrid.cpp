@@ -154,7 +154,10 @@ void AutoGrid::drawVerLine()
 
 void AutoGrid::drawGrid()
 {
+    // ª≠±≥æ∞∫·œﬂ
     drawHorLine();
+
+    // ª≠±≥æ∞¡Ω±ﬂ ˙œﬂ
     drawVerLine();
 }
 
