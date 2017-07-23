@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-    QSplitter *splitterMain = new QSplitter(Qt::Vertical, 0); //新建主分割窗口，水平分割
+    QSplitter *splitterMain = new QSplitter(Qt::Vertical, 0); //新建主分割窗口，垂直分割
     QSplitter *splitterLeft = new QSplitter(Qt::Vertical, splitterMain);
     QSplitter *splitterRight = new QSplitter(Qt::Vertical, splitterMain);
 
